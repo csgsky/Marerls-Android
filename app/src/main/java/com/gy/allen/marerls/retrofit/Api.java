@@ -22,4 +22,8 @@ public final class Api {
     // example: http://gank.io/api/search/query/listview/category/Android/count/2/page/1
     public static final String API_SEARCH = API_BASE + "search/";
 
+
+    // http://gank.io/api/data/福利/10/1
+    public static final String API_MEIZI = API_BASE + "data/福利/30/";
+
 }
