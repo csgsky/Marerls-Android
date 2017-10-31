@@ -60,7 +60,7 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
 
     private void initView() {
         mRecyclerView = mView.findViewById(R.id.recyclerview);
-        StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(manager);
         mAdapter = new MeiZiAdapter(getActivity(), meizi);
         mRecyclerView.setAdapter(mAdapter);
@@ -69,7 +69,6 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
 
     @Override
     public void setMeiZiInfo(GankMeiZiBean meiZiInfo) {
-        Toast.makeText(getActivity(),"妹子",Toast.LENGTH_LONG).show();
         if (!meiZiInfo.isError()) {
             List<GankMeiZiBean.ResultsBean> results = meiZiInfo.getResults();
             meizi.addAll(results);
