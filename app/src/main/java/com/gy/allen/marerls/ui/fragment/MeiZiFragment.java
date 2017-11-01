@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.gy.allen.marerls.R;
 import com.gy.allen.marerls.adapter.MeiZiAdapter;
 import com.gy.allen.marerls.data.GankMeiZiBean;
+import com.gy.allen.marerls.interfaces.MeiZiListClickListener;
 import com.gy.allen.marerls.mvp.presenter.impl.MeiZiPresenterImpl;
 import com.gy.allen.marerls.mvp.view.MeiZiView;
 
@@ -33,12 +35,12 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
     private MeiZiPresenterImpl mPresenter;
     private List<GankMeiZiBean.ResultsBean> meizi = new ArrayList<>();
     private MeiZiAdapter mAdapter;
+    private Toolbar mToolbar;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         mView = View.inflate(getActivity(), R.layout.fragment_meizi, null);
-        // initData(); // 模拟数据
         initPresenter();
         initView();
         return mView;
@@ -60,9 +62,16 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
 
     private void initView() {
         mRecyclerView = mView.findViewById(R.id.recyclerview);
+        mToolbar = mView.findViewById(R.id.toolbar);
+        mToolbar.setTitle("妹纸~");
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(manager);
-        mAdapter = new MeiZiAdapter(getActivity(), meizi);
+        mAdapter = new MeiZiAdapter(getActivity(), meizi, new MeiZiListClickListener() {
+            @Override
+            public void onMeiZiClick(View v, int position) {
+                Toast.makeText(getActivity(), "位置: " + position, Toast.LENGTH_LONG).show();
+            }
+        });
         mRecyclerView.setAdapter(mAdapter);
 
     }

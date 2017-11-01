@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.gy.allen.marerls.R;
 import com.gy.allen.marerls.data.GankMeiZiBean;
+import com.gy.allen.marerls.interfaces.MeiZiListClickListener;
 import com.gy.allen.marerls.viewholder.MeiZiHolder;
 
 import java.util.ArrayList;
@@ -21,24 +22,37 @@ public class MeiZiAdapter extends RecyclerView.Adapter<MeiZiHolder> {
 
     private Context mContext;
     private List<GankMeiZiBean.ResultsBean> meizi = new ArrayList<>();
-    public MeiZiAdapter(Context mContext, List<GankMeiZiBean.ResultsBean> data){
+    private MeiZiListClickListener mMeiZiListClickListener;
+    public MeiZiAdapter(Context mContext, List<GankMeiZiBean.ResultsBean> data, MeiZiListClickListener meiZiListClickListener){
         this.mContext = mContext;
         this.meizi = data;
+        this.mMeiZiListClickListener = meiZiListClickListener;
 
     }
     @Override
     public MeiZiHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.meizi_item, null);
-        return new MeiZiHolder(view);
+        return new MeiZiHolder(view, mMeiZiListClickListener);
     }
 
     @Override
     public void onBindViewHolder(MeiZiHolder holder, int position) {
 //        holder.MeiZiIcon
         GankMeiZiBean.ResultsBean item = meizi.get(position);
-        holder.MeiZiDesc.setText(item.getDesc());
-        Glide.with(mContext).load(item.getUrl()).into(holder.MeiZiIcon);
-
+        holder.bindListener();
+        int length = 10;
+        String createdAt = item.getCreatedAt();
+        String desc = createdAt.length() > length ? createdAt.substring(0,length) : "未知";
+        holder.MeiZiDesc.setText(desc);
+        Glide.with(mContext)
+                .load(item.getUrl())
+                .centerCrop()
+                .into(holder.MeiZiIcon)
+                .getSize((width, height) -> {
+                    if (!holder.card.isShown()) {
+                        holder.card.setVisibility(View.VISIBLE);
+                    }
+                });
     }
 
     @Override
