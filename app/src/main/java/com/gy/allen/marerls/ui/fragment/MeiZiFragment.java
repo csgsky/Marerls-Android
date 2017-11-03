@@ -1,6 +1,7 @@
 package com.gy.allen.marerls.ui.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,12 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.gy.allen.marerls.MainActivity;
 import com.gy.allen.marerls.R;
 import com.gy.allen.marerls.adapter.MeiZiAdapter;
 import com.gy.allen.marerls.data.GankMeiZiBean;
 import com.gy.allen.marerls.interfaces.MeiZiListClickListener;
 import com.gy.allen.marerls.mvp.presenter.impl.MeiZiPresenterImpl;
 import com.gy.allen.marerls.mvp.view.MeiZiView;
+import com.gy.allen.marerls.ui.activity.MeiZiActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,11 +39,12 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
     private List<GankMeiZiBean.ResultsBean> meizi = new ArrayList<>();
     private MeiZiAdapter mAdapter;
     private Toolbar mToolbar;
-
+    private MainActivity mMainActivity;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         mView = View.inflate(getActivity(), R.layout.fragment_meizi, null);
+        mMainActivity = (MainActivity) getActivity();
         initPresenter();
         initView();
         return mView;
@@ -69,7 +73,9 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
         mAdapter = new MeiZiAdapter(getActivity(), meizi, new MeiZiListClickListener() {
             @Override
             public void onMeiZiClick(View v, int position) {
-                Toast.makeText(getActivity(), "位置: " + position, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(mMainActivity, MeiZiActivity.class);
+                mMainActivity.startActivity(intent);
+
             }
         });
         mRecyclerView.setAdapter(mAdapter);

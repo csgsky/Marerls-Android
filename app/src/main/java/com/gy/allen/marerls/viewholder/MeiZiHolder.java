@@ -17,14 +17,15 @@ public class MeiZiHolder extends RecyclerView.ViewHolder {
     public final TextView MeiZiDesc;
     public final RatioImageView MeiZiIcon;
     public View card;
-    private MeiZiListClickListener listener;
+    public MeiZiListClickListener listener;
 
     public MeiZiHolder(View itemView, MeiZiListClickListener listener) {
         super(itemView);
         card = itemView;
+        this.listener = listener;
         MeiZiIcon = itemView.findViewById(R.id.item_meizi_img);
         MeiZiDesc = itemView.findViewById(R.id.tv_meizi_desc);
-        this.listener = listener;
+
     }
 
     public void bindListener(){
