@@ -20,7 +20,7 @@ import com.gy.allen.marerls.data.GankMeiZiBean;
 import com.gy.allen.marerls.interfaces.MeiZiListClickListener;
 import com.gy.allen.marerls.mvp.presenter.impl.MeiZiPresenterImpl;
 import com.gy.allen.marerls.mvp.view.MeiZiView;
-import com.gy.allen.marerls.ui.activity.MeiZiActivity;
+import com.gy.allen.marerls.ui.activity.GankActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +73,7 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
         mAdapter = new MeiZiAdapter(getActivity(), meizi, new MeiZiListClickListener() {
             @Override
             public void onMeiZiClick(View v, int position) {
-                Intent intent = new Intent(mMainActivity, MeiZiActivity.class);
+                Intent intent = new Intent(mMainActivity, GankActivity.class);
                 mMainActivity.startActivity(intent);
 
             }
