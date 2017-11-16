@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.gy.allen.marerls.R;
+import com.gy.allen.marerls.data.GankMeiZiBean;
 import com.gy.allen.marerls.interfaces.MeiZiListClickListener;
 import com.gy.allen.marerls.widget.RatioImageView;
 
@@ -28,9 +29,9 @@ public class MeiZiHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public void bindListener(){
+    public void bindListener(GankMeiZiBean.ResultsBean meizi){
         card.setOnClickListener(v -> {
-            listener.onMeiZiClick(card, getAdapterPosition());
+            listener.onMeiZiClick(v, card, meizi);
         });
     }
 }

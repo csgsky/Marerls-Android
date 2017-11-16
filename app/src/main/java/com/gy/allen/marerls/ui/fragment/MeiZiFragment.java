@@ -4,6 +4,8 @@ package com.gy.allen.marerls.ui.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -21,6 +23,7 @@ import com.gy.allen.marerls.interfaces.MeiZiListClickListener;
 import com.gy.allen.marerls.mvp.presenter.impl.MeiZiPresenterImpl;
 import com.gy.allen.marerls.mvp.view.MeiZiView;
 import com.gy.allen.marerls.ui.activity.GankActivity;
+import com.gy.allen.marerls.util.Consts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +43,8 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
     private MeiZiAdapter mAdapter;
     private Toolbar mToolbar;
     private MainActivity mMainActivity;
+    private boolean mMeiZiTouched = false;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -72,15 +77,31 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
         mRecyclerView.setLayoutManager(manager);
         mAdapter = new MeiZiAdapter(getActivity(), meizi, new MeiZiListClickListener() {
             @Override
-            public void onMeiZiClick(View v, int position) {
-                Intent intent = new Intent(mMainActivity, GankActivity.class);
-                mMainActivity.startActivity(intent);
+            public void onMeiZiClick(View v, View card, GankMeiZiBean.ResultsBean meizi) {
+                if (v == card) {
+                    startGankActivity(meizi, card);
+                }
 
             }
         });
         mRecyclerView.setAdapter(mAdapter);
+    }
+
+    private void startGankActivity(GankMeiZiBean.ResultsBean meizi, View transitView) {
+        Intent intent = new Intent(mMainActivity, GankActivity.class);
+        intent.putExtra(Consts.EXTRA_IMAGE_URL, meizi.getUrl());
+        intent.putExtra(Consts.EXTRA_IMAGE_TITLE, meizi.getDesc());
+        ActivityOptionsCompat compat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                mMainActivity, transitView, Consts.TRANSIT_PIC);
+        try {
+            ActivityCompat.startActivity(mMainActivity, intent, compat.toBundle());
+        } catch (Exception e) {
+            e.printStackTrace();
+            mMainActivity.startActivity(intent);
+        }
 
     }
+
 
     @Override
     public void setMeiZiInfo(GankMeiZiBean meiZiInfo) {
@@ -93,6 +114,6 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
 
     @Override
     public void showLoadError() {
-        Toast.makeText(getActivity(),"ERROR",Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_LONG).show();
     }
 }

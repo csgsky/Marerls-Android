@@ -27,7 +27,6 @@ public class MeiZiAdapter extends RecyclerView.Adapter<MeiZiHolder> {
         this.mContext = mContext;
         this.meizi = data;
         this.mMeiZiListClickListener = meiZiListClickListener;
-
     }
     @Override
     public MeiZiHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,7 +38,7 @@ public class MeiZiAdapter extends RecyclerView.Adapter<MeiZiHolder> {
     public void onBindViewHolder(MeiZiHolder holder, int position) {
 //        holder.MeiZiIcon
         GankMeiZiBean.ResultsBean item = meizi.get(position);
-        holder.bindListener();
+        holder.bindListener(item);
         int length = 10;
         String createdAt = item.getCreatedAt();
         String desc = createdAt.length() > length ? createdAt.substring(0,length) : "未知";
