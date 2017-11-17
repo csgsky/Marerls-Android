@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.facebook.stetho.Stetho;
+import com.gy.allen.marerls.util.Utils;
 
 /**
  * Created by allen on 17/10/25.
@@ -17,6 +18,7 @@ public class App extends Application {
         super.onCreate();
         sContext = this;
         Stetho.initializeWithDefaults(this);
+        Utils.init(this);
     }
 
     @Override

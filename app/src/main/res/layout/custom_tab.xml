@@ -24,6 +24,7 @@
             android:layout_marginTop="2dp"
             android:textColor="#424242"
             tools:text="妹子"
+            android:visibility="gone"
             android:textSize="12sp"/>
     </LinearLayout>
 

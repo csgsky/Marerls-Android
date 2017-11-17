@@ -2,6 +2,7 @@ package com.gy.allen.marerls.ui.fragment;
 
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -15,6 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.gy.allen.marerls.MainActivity;
 import com.gy.allen.marerls.R;
 import com.gy.allen.marerls.adapter.MeiZiAdapter;
@@ -72,14 +78,31 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
     private void initView() {
         mRecyclerView = mView.findViewById(R.id.recyclerview);
         mToolbar = mView.findViewById(R.id.toolbar);
-        mToolbar.setTitle("妹纸~");
+        mToolbar.setTitle("妹纸");
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(manager);
         mAdapter = new MeiZiAdapter(getActivity(), meizi, new MeiZiListClickListener() {
             @Override
             public void onMeiZiClick(View v, View card, GankMeiZiBean.ResultsBean meizi) {
                 if (v == card) {
-                    startGankActivity(meizi, card);
+
+                    Glide.with(mMainActivity).load(meizi.getUrl()).asBitmap().listener(new RequestListener<String, Bitmap>() {
+                        @Override
+                        public boolean onException(Exception e, String model, Target<Bitmap> target, boolean isFirstResource) {
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onResourceReady(Bitmap resource, String model, Target<Bitmap> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                            return false;
+                        }
+                    }).into(new SimpleTarget<Bitmap>() {
+                        @Override
+                        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                            startGankActivity(meizi, card);
+                        }
+                    });
+
                 }
 
             }
