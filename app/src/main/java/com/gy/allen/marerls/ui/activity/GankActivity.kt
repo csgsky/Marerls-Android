@@ -6,7 +6,6 @@ import android.support.v4.view.ViewCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.animation.DecelerateInterpolator
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.gy.allen.marerls.R
 import com.gy.allen.marerls.util.BitmapUtils
@@ -64,7 +63,6 @@ class GankActivity : AppCompatActivity() {
                     .subscribe { granted -> {
                         if (granted) {
                             BitmapUtils.saveImage(mActivity, bitmap)
-                            Toast.makeText(mActivity, "已存储本地相册", Toast.LENGTH_LONG).show()
                         }
                     }}
         } }).start()
