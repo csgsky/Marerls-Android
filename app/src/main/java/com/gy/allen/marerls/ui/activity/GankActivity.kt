@@ -69,7 +69,7 @@ class GankActivity : AppCompatActivity() {
     }
 
     private fun shareMeizi(){
-        // todo
+        // todo 分享
     }
 
     private fun menuClick(id: Int): Boolean {
