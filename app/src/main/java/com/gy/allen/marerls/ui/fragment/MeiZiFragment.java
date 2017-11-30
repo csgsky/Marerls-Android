@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -41,7 +42,7 @@ import io.reactivex.disposables.CompositeDisposable;
  */
 
 // 展示妹子图片的 fragment
-public class MeiZiFragment extends Fragment implements MeiZiView {
+public class MeiZiFragment extends Fragment implements MeiZiView, SwipeRefreshLayout.OnRefreshListener {
     private View mView;
     private RecyclerView mRecyclerView;
     private MeiZiPresenterImpl mPresenter;
@@ -50,6 +51,7 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
     private Toolbar mToolbar;
     private MainActivity mMainActivity;
     private boolean mMeiZiTouched = false;
+    private SwipeRefreshLayout mRefreshLayout;
 
     @Nullable
     @Override
@@ -78,6 +80,8 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
     private void initView() {
         mRecyclerView = mView.findViewById(R.id.recyclerview);
         mToolbar = mView.findViewById(R.id.toolbar);
+        mRefreshLayout = mView.findViewById(R.id.refreshLayout);
+        mRefreshLayout.setOnRefreshListener(this);
         mToolbar.setTitle("妹纸");
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(manager);
@@ -138,5 +142,10 @@ public class MeiZiFragment extends Fragment implements MeiZiView {
     @Override
     public void showLoadError() {
         Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onRefresh() {
+        mRefreshLayout.setRefreshing(false);
     }
 }
