@@ -54,7 +54,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
         StringBuffer sb = new StringBuffer();
         if (casts != null && casts.size() > 0) {
             for (int i = 0; i <casts.size() ; i++) {
-                sb.append(casts.get(i).getName() + ",");
+                if (i == casts.size() - 1) {
+                    sb.append(casts.get(i).getName());
+                } else {
+                    sb.append(casts.get(i).getName() + ",");
+                }
             }
             holder.casts.setText("主演：" + sb.toString());
         }
@@ -66,11 +70,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
 
         List<ThreatersResponse.SubjectsBean.DirectorsBean> directors = item.getDirectors();
         if (directors != null  && directors.size() > 0) {
-            StringBuffer stringBuffer = new StringBuffer();
-            for (int i = 0; i < directors.size(); i++) {
-                stringBuffer.append(directors.get(i).getName() + ",");
-            }
-            holder.directors.setText("导演：" + sb.toString());
+//            StringBuffer stringBuffer = new StringBuffer();
+//            for (int i = 0; i < directors.size(); i++) {
+//                stringBuffer.append(directors.get(i).getName() + ",");
+//            }
+            holder.directors.setText("导演：" + directors.get(0).getName());
         }
 
     }

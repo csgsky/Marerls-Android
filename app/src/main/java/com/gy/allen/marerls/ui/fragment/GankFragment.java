@@ -61,7 +61,6 @@ public class GankFragment extends Fragment implements GankView {
         mRecyclerView.setLayoutManager(manager);
         adapter = new HomeAdapter(mActivity, subject);
         mRecyclerView.setAdapter(adapter);
-
     }
 
     @Override
@@ -69,7 +68,7 @@ public class GankFragment extends Fragment implements GankView {
         subject.clear();
         subject.addAll(threatersResponse.getSubjects());
         adapter.notifyDataSetChanged();
-        Toast.makeText(mActivity, threatersResponse.getCount() + "", Toast.LENGTH_LONG).show();
+//        Toast.makeText(mActivity, threatersResponse.getCount() + "", Toast.LENGTH_LONG).show();
     }
 
     @Override

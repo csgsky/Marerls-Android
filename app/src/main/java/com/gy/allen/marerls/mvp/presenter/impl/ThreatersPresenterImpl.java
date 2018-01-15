@@ -1,7 +1,5 @@
 package com.gy.allen.marerls.mvp.presenter.impl;
 
-import android.widget.Toast;
-
 import com.gy.allen.marerls.data.ThreatersResponse;
 import com.gy.allen.marerls.mvp.BasePresenter;
 import com.gy.allen.marerls.mvp.presenter.ThreatersPresenter;
@@ -54,7 +52,7 @@ public class ThreatersPresenterImpl implements ThreatersPresenter, BasePresenter
 
                     @Override
                     public void onComplete() {
-                        Toast.makeText(mGankFragment.getActivity(), "complete", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(mGankFragment.getActivity(), "complete", Toast.LENGTH_LONG).show();
                     }
                 });
     }
