@@ -17,8 +17,17 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         sContext = this;
-        Stetho.initializeWithDefaults(this);
+        initDebug();
+
         Utils.init(this);
+    }
+
+    private void initDebug() {
+        Stetho.initialize(Stetho.newInitializerBuilder(this)
+        .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
+                .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
+                .build()
+        );
     }
 
     @Override

@@ -43,12 +43,12 @@ public final class SearchPresenterImpl implements SearchPresenter, BasePresenter
                 .subscribeWith(new DisposableObserver<GankTypeBean>() {
                     @Override
                     public void onNext(GankTypeBean value) {
-                        mMainActivity.setSearchInfo(value);
+//                        mMainActivity.setSearchInfo(value);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        mMainActivity.showNetworkError();
+//                        mMainActivity.showNetworkError();
                     }
 
                     @Override

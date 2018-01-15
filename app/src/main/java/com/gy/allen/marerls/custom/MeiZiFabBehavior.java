@@ -37,7 +37,7 @@ public class MeiZiFabBehavior extends CoordinatorLayout.Behavior<View> {
     @Override
     public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, View child, View target, int dx, int dy, int[] consumed) {
         //dy大于0是向上滚动 小于0是向下滚动
-        Log.d("MeiZiBehavior", "dy => " + dy);
+//        Log.d("MeiZiBehavior", "dy => " + dy);
         if (dy >= 0 && !isAnimate && child.getVisibility() == View.VISIBLE) {
             hide(child);
         } else if (dy < 0 && !isAnimate && child.getVisibility() == View.GONE) {
