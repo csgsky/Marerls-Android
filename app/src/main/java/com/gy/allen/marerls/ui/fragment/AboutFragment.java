@@ -53,7 +53,7 @@ public class AboutFragment extends Fragment {
                                             .countable(true)
                                             .maxSelectable(9)
                                             .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED)
-                                            .thumbnailScale(0.85f)
+                                            .thumbnailScale(0.5f)
                                             .imageEngine(new GlideEngine())
                                             .forResult(RESULT_CODE_CHOOSE);
                                 }
