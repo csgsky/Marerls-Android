@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'me.tatarka.retrolambda'//这个是重点
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
@@ -12,9 +13,6 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        jackOptions {
-            enabled true
-        }
     }
     buildTypes {
         release {
