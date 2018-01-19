@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.gy.allen.domain.UseCase;
 import com.gy.allen.marerls.MainActivity;
 import com.gy.allen.marerls.R;
 import com.gy.allen.marerls.adapter.HomeAdapter;
@@ -55,7 +54,7 @@ public class GankFragment extends Fragment implements GankView {
     }
 
     private void initView() {
-        Toast.makeText(mActivity, UseCase.USECASE + "", Toast.LENGTH_LONG).show();
+//        Toast.makeText(mActivity, UseCase.USECASE + "", Toast.LENGTH_LONG).show();
         mToolbar = mView.findViewById(R.id.toolbar);
         mToolbar.setTitle("文章");
         mRecyclerView = mView.findViewById(R.id.recyclerview);
