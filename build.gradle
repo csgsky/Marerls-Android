@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.0'
         classpath 'me.tatarka:gradle-retrolambda:3.6.1'//这个是重点
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -22,4 +23,22 @@ allprojects {
             url "https://maven.google.com"
         }
     }
+}
+
+ext {
+    configurations = [
+            buildToolsVersion: "26.0.2",
+            compileVersion   : 26,
+            minSdk           : 16,
+            targetSdk        : 26,
+            versionCode      : 1,
+            versionName      : "1.0",
+            javaVersion      : "1.7"
+    ]
+
+    libraries = [
+            supportVersion       : "26.0.1",
+            dagger               : "2.2",
+            rxjava               : "2.0.1"
+    ]
 }
