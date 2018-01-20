@@ -13,7 +13,7 @@ import io.reactivex.Scheduler;
  * Created by allen on 18/1/19.
  */
 
-public class ThreatersUseCase extends UseCase {
+public class ThreatersUseCase extends UseCase<ThreatersResp> {
     private final Repository repository;
     private final Scheduler uiThread;
     private final Scheduler executorThread;
@@ -35,6 +35,6 @@ public class ThreatersUseCase extends UseCase {
     }
 
     public Observable<ThreatersResp> getThreatorList(String start) {
-        return repository.getThreatersList(start).subscribeOn(executorThread).observeOn(uiThread);
+        return repository.getThreatersList(start).observeOn(uiThread).subscribeOn(executorThread);
     }
 }

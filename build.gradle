@@ -37,7 +37,7 @@ ext {
     ]
 
     libraries = [
-            supportVersion       : "26.0.1",
+            supportVersion       : "26.0.2",
             dagger               : "2.2",
             rxjava               : "2.0.1"
     ]
