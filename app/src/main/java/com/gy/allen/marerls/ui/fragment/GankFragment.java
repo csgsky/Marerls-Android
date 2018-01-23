@@ -56,7 +56,7 @@ public class GankFragment extends Fragment implements GankView {
     private void initView() {
 //        Toast.makeText(mActivity, UseCase.USECASE + "", Toast.LENGTH_LONG).show();
         mToolbar = mView.findViewById(R.id.toolbar);
-        mToolbar.setTitle("文章");
+        mToolbar.setTitle("影院电影");
         mRecyclerView = mView.findViewById(R.id.recyclerview);
         LinearLayoutManager manager = new LinearLayoutManager(mActivity);
         mRecyclerView.setLayoutManager(manager);
