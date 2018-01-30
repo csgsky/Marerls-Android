@@ -113,6 +113,7 @@ public class RestDataSource implements Repository{
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(5, TimeUnit.SECONDS)
                 .addInterceptor(loggingInterceptor)
                 .addNetworkInterceptor(new StethoInterceptor())
                 .addInterceptor(provideOfflineCacheIntercepter())

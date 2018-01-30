@@ -35,8 +35,8 @@ class GankActivity : AppCompatActivity() {
         initToolbar();
         mActivity = this
         ViewCompat.setTransitionName(imageView, Consts.TRANSIT_PIC)
-        Glide.with(this).load(mImageUrl).centerCrop().into(imageView);
-        app_bar_layout.toolbar.setTitle(mImageTitle);
+        Glide.with(this).load(mImageUrl).centerCrop().into(imageView)
+        app_bar_layout.toolbar.setTitle(mImageTitle)
         setupPhotoAttacher();
     }
 
