@@ -48,11 +48,7 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'net.steamcrafted:materialiconlib:1.1.4'
-
     compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
-
-    compile 'com.shuyu:GSYVideoPlayer:3.0.0'
-
 
     apt "com.google.dagger:dagger-compiler:${libs.dagger}"
     testCompile 'junit:junit:4.12'
