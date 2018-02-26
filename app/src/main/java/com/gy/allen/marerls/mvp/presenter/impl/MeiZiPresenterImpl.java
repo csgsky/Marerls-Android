@@ -53,11 +53,6 @@ public class MeiZiPresenterImpl implements MeiZiPresenter, BasePresenter {
     }
 
     @Override
-    public void subscribeMoreMeiZi(int page) {
-
-    }
-
-    @Override
     public void unsubscribe() {
         compositeDisposable.clear();
     }

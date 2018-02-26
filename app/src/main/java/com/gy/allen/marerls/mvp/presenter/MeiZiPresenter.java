@@ -6,7 +6,5 @@ package com.gy.allen.marerls.mvp.presenter;
 
 public interface MeiZiPresenter {
     void subscribeMeiZi(int page);
-
-    void subscribeMoreMeiZi(int page);
 }
 

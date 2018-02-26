@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.gy.allen.model.repository.Repository;
+import com.gy.allen.model.response.DailyGankResp;
 import com.gy.allen.model.response.ThreatersResp;
 
 import java.io.File;
@@ -34,8 +35,9 @@ public class RestDataSource implements Repository {
 
     private ApiSp apiSp;
     public static String END_POINT_DOUBAN = "https://api.douban.com/";
-    public static String END_POINT_MEIZI = "";
+    public static String END_POINT_GANK = "http://gank.io/api/";
     private static Api api;
+    private static ApiGank apiGank;
 
     @Inject
     public RestDataSource(
@@ -128,11 +130,23 @@ public class RestDataSource implements Repository {
                 .client(client)
                 .build();
 
+        Retrofit retrofitGank = new Retrofit.Builder()
+                .baseUrl(END_POINT_GANK)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(client)
+                .build();
+
         api = retrofit.create(Api.class);
+        apiGank = retrofitGank.create(ApiGank.class);
     }
 
     @Override
     public Observable<ThreatersResp> getThreatersList(String start) {
         return api.getThreaters(start);
+    }
+
+    public Observable<DailyGankResp> dailyGank(String year, String month, String day) {
+        return apiGank.dailyGank(year, month, day);
     }
 }

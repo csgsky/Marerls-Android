@@ -1,5 +1,6 @@
 package com.gy.allen.model.repository;
 
+import com.gy.allen.model.response.DailyGankResp;
 import com.gy.allen.model.response.ThreatersResp;
 
 import io.reactivex.Observable;
@@ -11,4 +12,5 @@ import io.reactivex.Observable;
 
 public interface Repository {
     Observable<ThreatersResp> getThreatersList(String start);
+    Observable<DailyGankResp> dailyGank(String year, String month, String day);
 }
