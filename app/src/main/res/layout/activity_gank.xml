@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.gy.allen.marerls.ui.activity.GankActivity">
-    <include layout="@layout/view_toolbar"/>
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_gravity="center"
         android:layout_height="match_parent"/>
+    <include layout="@layout/view_toolbar"/>
 </RelativeLayout>

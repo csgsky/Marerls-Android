@@ -53,27 +53,6 @@ public class AppBarUtil {
         ab.setTitle(title);
     }
 
-//    public static void initAppBar(AppCompatActivity activity, String title, TitleOnClickListener titleOnClickListener) {
-//        activity.setSupportActionBar((Toolbar) activity.findViewById(R.id.toolbar));
-//        final ActionBar ab = activity.getSupportActionBar();
-//        ab.setDisplayHomeAsUpEnabled(true);
-//        ab.setTitle("");
-//        ((TextView) activity.findViewById(R.id.appbar_title)).setText(title);
-//        (activity.findViewById(R.id.appbar_title)).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                titleOnClickListener.onTitleClick(v);
-//            }
-//        });
-//    }
-
-//    public static void initAppBarTranslate(AppCompatActivity activity, String title) {
-//        activity.setSupportActionBar((Toolbar) activity.findViewById(R.id.toolbar_translate));
-//        final ActionBar ab = activity.getSupportActionBar();
-//        ab.setDisplayHomeAsUpEnabled(true);
-//        ab.setTitle("");
-//        ((TextView) activity.findViewById(R.id.appbar_title)).setText(title);
-//    }
 
     public static int getActionBarHeight(AppCompatActivity context) {
         int result = 0;

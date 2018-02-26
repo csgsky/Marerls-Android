@@ -30,11 +30,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by allen on 18/1/19.
  */
 
-public class RestDataSource implements Repository{
-    public static final int  RESTDATASOURCE = 2432134;
+public class RestDataSource implements Repository {
 
     private ApiSp apiSp;
     public static String END_POINT_DOUBAN = "https://api.douban.com/";
+    public static String END_POINT_MEIZI = "";
     private static Api api;
 
     @Inject

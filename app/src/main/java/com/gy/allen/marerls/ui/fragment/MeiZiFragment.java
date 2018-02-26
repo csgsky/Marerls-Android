@@ -70,6 +70,7 @@ public class MeiZiFragment extends Fragment implements MeiZiView, SwipeRefreshLa
     }
 
     private void initData() {
+        mRefreshLayout.setRefreshing(true);
         mPresenter.subscribeMeiZi(1);
     }
 
@@ -83,6 +84,7 @@ public class MeiZiFragment extends Fragment implements MeiZiView, SwipeRefreshLa
         mRefreshLayout = mView.findViewById(R.id.refreshLayout);
         mRefreshLayout.setOnRefreshListener(this);
         mToolbar.setTitle("妹纸");
+        mToolbar.setTitleTextColor(getResources().getColor(R.color.color_white));
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(manager);
         mAdapter = new MeiZiAdapter(getActivity(), meizi, new MeiZiListClickListener() {
@@ -132,6 +134,7 @@ public class MeiZiFragment extends Fragment implements MeiZiView, SwipeRefreshLa
 
     @Override
     public void setMeiZiInfo(GankMeiZiBean meiZiInfo) {
+        mRefreshLayout.setRefreshing(false);
         if (!meiZiInfo.isError()) {
             List<GankMeiZiBean.ResultsBean> results = meiZiInfo.getResults();
             meizi.addAll(results);
@@ -141,6 +144,7 @@ public class MeiZiFragment extends Fragment implements MeiZiView, SwipeRefreshLa
 
     @Override
     public void showLoadError() {
+        mRefreshLayout.setRefreshing(false);
         Toast.makeText(getActivity(), "ERROR", Toast.LENGTH_LONG).show();
     }
 

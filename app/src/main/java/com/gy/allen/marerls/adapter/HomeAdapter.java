@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.gy.allen.marerls.R;
-import com.gy.allen.marerls.data.ThreatersResponse;
 import com.gy.allen.marerls.viewholder.HomeHolder;
+import com.gy.allen.model.response.ThreatersResp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +21,8 @@ import java.util.List;
 public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
 
     private Context mContext;
-    private List<ThreatersResponse.SubjectsBean> subject = new ArrayList<>();
-    public HomeAdapter(Context context, List<ThreatersResponse.SubjectsBean> subject) {
+    private List<ThreatersResp.SubjectsBean> subject = new ArrayList<>();
+    public HomeAdapter(Context context, List<ThreatersResp.SubjectsBean> subject) {
         this.mContext = context;
         this.subject = subject;
     }
@@ -36,8 +36,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
 
     @Override
     public void onBindViewHolder(HomeHolder holder, int position) {
-        ThreatersResponse.SubjectsBean item = subject.get(position);
-        ThreatersResponse.SubjectsBean.ImagesBean images = item.getImages();
+        ThreatersResp.SubjectsBean item = subject.get(position);
+        ThreatersResp.SubjectsBean.ImagesBean images = item.getImages();
         if (images.getMedium() != null && !TextUtils.isEmpty(images.getMedium())) {
             Glide.with(mContext)
                     .load(images.getMedium())
@@ -50,7 +50,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
             holder.name.setText("《" + title + "》");
         }
 
-        List<ThreatersResponse.SubjectsBean.CastsBean> casts = item.getCasts();
+        List<ThreatersResp.SubjectsBean.CastsBean> casts = item.getCasts();
         StringBuffer sb = new StringBuffer();
         if (casts != null && casts.size() > 0) {
             for (int i = 0; i <casts.size() ; i++) {
@@ -68,7 +68,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
             holder.year.setText(year);
         }
 
-        List<ThreatersResponse.SubjectsBean.DirectorsBean> directors = item.getDirectors();
+        List<ThreatersResp.SubjectsBean.DirectorsBean> directors = item.getDirectors();
         if (directors != null  && directors.size() > 0) {
 //            StringBuffer stringBuffer = new StringBuffer();
 //            for (int i = 0; i < directors.size(); i++) {

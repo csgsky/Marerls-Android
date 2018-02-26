@@ -4,15 +4,15 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.gy.allen.marerls.ui.activity.GankActivity">
     <item
-        android:id="@+id/action_save"
-        android:orderInCategory="100"
-        android:title="@string/action_save"
+        android:id="@+id/action_gank"
+        android:title="@string/action_gank"
+        android:orderInCategory="99"
         app:showAsAction="never"
         android:icon="@drawable/toolbar_back"
         />
     <item
-        android:id="@+id/action_share"
-        android:title="@string/action_share"
+        android:id="@+id/action_save"
+        android:title="@string/action_save"
         android:orderInCategory="99"
         app:showAsAction="never"
         android:icon="@drawable/toolbar_back"

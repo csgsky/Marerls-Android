@@ -6,11 +6,9 @@ import com.gy.allen.marerls.mvp.view.ThreaterView;
 import com.gy.allen.marerls.mvp.view.View;
 import com.gy.allen.model.response.ThreatersResp;
 
-import org.reactivestreams.Subscription;
-
 import javax.inject.Inject;
 
-import io.reactivex.disposables.Disposable;
+import io.reactivex.Observable;
 
 /**
  * Created by allen on 18/1/20.
@@ -19,9 +17,7 @@ import io.reactivex.disposables.Disposable;
 public class Threaters implements Presenter {
 
     private final ThreatersUseCase usecase;
-    private Subscription subscription;
     private ThreaterView view;
-    private int page = 0;
 
     @Inject
     public Threaters(ThreatersUseCase usecase) {
@@ -33,17 +29,8 @@ public class Threaters implements Presenter {
         view = (ThreaterView) v;
     }
 
-    public void getThreaters() {
-        Disposable subscribe = usecase.getThreatorList(1 + "").subscribe(this::threatersResponse, this::showError);
-    }
-
-    private void showError(Throwable throwable) {
-        throwable.printStackTrace();
-    }
-
-    private void threatersResponse(ThreatersResp resp) {
-        page = 1;
-        view.showThreaters(resp);
+    public Observable<ThreatersResp> getThreaters(String page) {
+        return usecase.getThreatorList(page);
     }
 
     @Override

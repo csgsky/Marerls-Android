@@ -15,7 +15,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by allen on 18/1/19.
+ * Created by 少罡 on 18/1/19.
  */
 
 @Module

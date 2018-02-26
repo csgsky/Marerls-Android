@@ -29,8 +29,8 @@
         <activity
             android:name=".ui.activity.MeiZiActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.GankActivity">
-        </activity>
+        <activity android:name=".ui.activity.GankActivity" />
+        <activity android:name=".ui.activity.DailyGankA" />
     </application>
 
 </manifest>
