@@ -3,7 +3,6 @@ package com.gy.allen.marerls.injector.components;
 import com.gy.allen.marerls.injector.Activity;
 import com.gy.allen.marerls.injector.modules.ActivityModule;
 import com.gy.allen.marerls.injector.modules.GankModule;
-import com.gy.allen.marerls.ui.activity.DailyGankA;
 
 import dagger.Component;
 
@@ -18,5 +17,5 @@ import dagger.Component;
         }
 )
 public interface GankComponent extends ActivityComponent {
-    void inject(DailyGankA activity);
+
 }

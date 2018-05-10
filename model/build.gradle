@@ -34,21 +34,17 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     // ReactiveX
     compile "io.reactivex.rxjava2:rxjava:${libs.rxjava}"
     compile "io.reactivex.rxjava2:rxandroid:${libs.rxandroid}"
-
     // Square
     compile "com.squareup.retrofit2:retrofit:${libs.retrofit}"
     compile "com.squareup.retrofit2:converter-gson:${libs.convertergson}"
     compile "com.squareup.retrofit2:adapter-rxjava2:${libs.rxjavaadapter}"
-
     // other
     compile "com.google.dagger:dagger:${libs.dagger}"
     compile "com.squareup.okhttp3:okhttp:${libs.okhttp}"
     compile "com.squareup.okhttp3:logging-interceptor:${libs.okhttp_intercepter}"
     compile "com.facebook.stetho:stetho:${libs.stetho}"
     compile "com.facebook.stetho:stetho-okhttp3:${libs.stetho_okhttp}"
-
 }

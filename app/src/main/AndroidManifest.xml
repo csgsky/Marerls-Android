@@ -26,11 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.activity.MeiZiActivity"
-            android:screenOrientation="portrait"/>
         <activity android:name=".ui.activity.GankActivity" />
-        <activity android:name=".ui.activity.DailyGankA" />
     </application>
 
 </manifest>

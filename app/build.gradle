@@ -9,7 +9,7 @@ def libs = rootProject.ext.libraries;
 
 android {
     compileSdkVersion cfg.compileVersion
-    buildToolsVersion cfg.buildToolsVersion
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.gy.allen.marerls"
         minSdkVersion cfg.minSdk
