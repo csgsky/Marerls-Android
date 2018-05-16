@@ -11,7 +11,6 @@ import com.gy.allen.marerls.R;
 import com.gy.allen.marerls.viewholder.HomeHolder;
 import com.gy.allen.model.response.ThreatersResp;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +20,7 @@ import java.util.List;
 public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
 
     private Context mContext;
-    private List<ThreatersResp.SubjectsBean> subject = new ArrayList<>();
+    private List<ThreatersResp.SubjectsBean> subject;
     public HomeAdapter(Context context, List<ThreatersResp.SubjectsBean> subject) {
         this.mContext = context;
         this.subject = subject;
@@ -65,7 +64,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
 
         String year = item.getYear();
         if (year != null && !TextUtils.isEmpty(year)){
-            holder.year.setText(year);
+            holder.year.setText("上映年份：" + year);
         }
 
         List<ThreatersResp.SubjectsBean.DirectorsBean> directors = item.getDirectors();

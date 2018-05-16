@@ -30,7 +30,7 @@ public class Threaters implements Presenter {
     }
 
     public Observable<ThreatersResp> getThreaters(String page) {
-        return usecase.getThreatorList(page);
+        return usecase.getThreaterList(page);
     }
 
     @Override

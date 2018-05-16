@@ -4,12 +4,12 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'me.tatarka.retrolambda'
 
-def cfg = rootProject.ext.configurations;
-def libs = rootProject.ext.libraries;
+def cfg = rootProject.ext.configurations
+def libs = rootProject.ext.libraries
 
 android {
     compileSdkVersion cfg.compileVersion
-    buildToolsVersion '26.0.2'
+    buildToolsVersion cfg.buildToolsVersion
     defaultConfig {
         applicationId "com.gy.allen.marerls"
         minSdkVersion cfg.minSdk
@@ -36,23 +36,19 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.0.2'
-    compile 'com.android.support:design:26.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    compile 'com.github.clans:fab:1.6.4'
-
-    compile 'com.github.chrisbanes.photoview:library:1.2.3'
-    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
-
-    compile 'com.google.code.gson:gson:2.8.2'
-    compile 'com.tencent.sonic:sdk:3.0.0-beta'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
-
-    apt "com.google.dagger:dagger-compiler:${libs.dagger}"
-    testCompile 'junit:junit:4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile project(':domain')
+    compile "com.android.support:appcompat-v7:${libs.supportVersion}"
+    compile "com.android.support:design:${libs.supportVersion}"
+    compile "com.github.clans:fab:${libs.fab}"
+    compile "com.github.chrisbanes.photoview:library:${libs.photo_view}"
+    compile "com.trello.rxlifecycle2:rxlifecycle-components:${libs.rxlifecycle}"
+    compile "com.google.code.gson:gson:${libs.gson}"
+    compile "com.github.bumptech.glide:glide:${libs.glide}"
+    compile "com.tbruyelle.rxpermissions2:rxpermissions:${libs.rxpermissions}"
+    apt "com.google.dagger:dagger-compiler:${libs.dagger}"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    testCompile "junit:junit:${libs.junit}"
 }
 repositories {
     mavenCentral()

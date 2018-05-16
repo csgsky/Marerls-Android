@@ -17,7 +17,6 @@ import dagger.Component;
             ThreatersModule.class
     }
 )
-
-public interface MoviceComponent extends ActivityComponent {
+public interface DouBanComponent extends ActivityComponent {
     void inject(MainActivity activity);
 }

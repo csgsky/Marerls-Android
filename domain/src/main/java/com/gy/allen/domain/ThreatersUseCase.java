@@ -10,7 +10,7 @@ import io.reactivex.Observable;
 import io.reactivex.Scheduler;
 
 /**
- * Created by allen on 18/1/19.
+ * Created by 少罡 on 18/1/19.
  */
 
 public class ThreatersUseCase extends UseCase<ThreatersResp> {
@@ -34,7 +34,7 @@ public class ThreatersUseCase extends UseCase<ThreatersResp> {
         return null;
     }
 
-    public Observable<ThreatersResp> getThreatorList(String start) {
+    public Observable<ThreatersResp> getThreaterList(String start) {
         return repository.getThreatersList(start).observeOn(uiThread).subscribeOn(executorThread);
     }
 }
