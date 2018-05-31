@@ -38,7 +38,7 @@ ext {
 
     libraries = [
             supportVersion       : "26.0.2",
-            dagger               : "2.2",
+            dagger               : "2.4",
             rxjava               : "2.0.1",
             rxandroid            : "2.0.1",
             retrofit             : "2.3.0",
@@ -52,6 +52,7 @@ ext {
             rxlifecycle          : "2.2.1",
             gson                 : "2.8.2",
             glide                : "3.7.0",
+            eventbus             : "3.1.1",
             rxpermissions        : "0.9.4@aar",
             fab                  : "1.6.4",
             junit                : "4.12"

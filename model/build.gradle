@@ -36,6 +36,7 @@ dependencies {
     compile "com.squareup.retrofit2:adapter-rxjava2:${libs.rxjavaadapter}"
     // other
     compile "com.google.dagger:dagger:${libs.dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${libs.dagger}"
     compile "com.squareup.okhttp3:okhttp:${libs.okhttp}"
     compile "com.squareup.okhttp3:logging-interceptor:${libs.okhttp_intercepter}"
     compile "com.facebook.stetho:stetho:${libs.stetho}"
