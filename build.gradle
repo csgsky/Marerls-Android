@@ -54,7 +54,7 @@ ext {
             glide                : "3.7.0",
             eventbus             : "3.1.1",
             rxpermissions        : "0.9.4@aar",
-            fab                  : "1.6.4",
+            skinChange           : "0.1.8@aar",
             junit                : "4.12"
     ]
 }

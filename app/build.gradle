@@ -40,7 +40,7 @@ dependencies {
     compile project(':domain')
     compile "com.android.support:appcompat-v7:${libs.supportVersion}"
     compile "com.android.support:design:${libs.supportVersion}"
-    compile "com.github.clans:fab:${libs.fab}"
+    compile 'com.bilibili:magicasakura:0.1.6'
     compile "org.greenrobot:eventbus:${libs.eventbus}"
     compile "com.github.chrisbanes.photoview:library:${libs.photo_view}"
     compile "com.trello.rxlifecycle2:rxlifecycle-components:${libs.rxlifecycle}"

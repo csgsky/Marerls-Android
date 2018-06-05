@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Marerls</string>
+
+
+    <string name="navigation_drawer_open">打开</string>
+    <string name="navigation_drawer_close">关闭</string>
+
+    <string name="action_search">搜索</string>
+    <string name="action_clear">清空</string>
+    <string name="author">Lauzy</string>
+    <string name="drawer_music">我的曲库</string>
+    <string name="drawer_net_song">网络曲库</string>
+    <string name="drawer_file_folder">文件夹</string>
+    <string name="drawer_favorite">喜欢</string>
+    <string name="drawer_recent">最近播放</string>
+    <string name="drawer_setting">设置</string>
+    <string name="drawer_about">关于</string>
+    <string name="drawer_exit">退出</string>
+
+    <string name="setting_theme">主题颜色</string>
+    <string name="choose_theme">选择主题颜色</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+
+    <!--local -->
+    <string name="music">歌曲</string>
+    <string name="album">专辑</string>
+    <string name="singer">歌手</string>
+
+    <!--category-->
+    <string name="new_song">新歌</string>
+    <string name="hot_song">热歌</string>
+    <string name="rock_song">摇滚</string>
+    <string name="jazz_song">爵士</string>
+    <string name="pop_song">流行</string>
+    <string name="foreign_song">欧美</string>
+    <string name="classic_song">经典</string>
+    <string name="love_song">情歌</string>
+    <string name="movie_song">影视金曲</string>
+    <string name="net_song">网络</string>
+
+    <string name="open_permission">打开</string>
+    <string name="permission_denied">访问音乐的权限被拒绝了哦，点击设置打开享受音乐。</string>
+
+    <string name="song_numbers"><xliff:g id="count">%d</xliff:g>首歌</string>
+    <string name="song_number"><xliff:g id="count">%d</xliff:g>首歌</string>
+
+    <string name="album_numbers"><xliff:g id="count">%d</xliff:g>张专辑</string>
+    <string name="album_number"><xliff:g id="count">%d</xliff:g>张专辑</string>
+
+    <string name="repeat_loop_mode">列表循环</string>
+    <string name="repeat_single_mode">单曲循环</string>
+    <string name="repeat_shuffle_mode">随机播放</string>
+
+    <string name="clear_favorite_songs">清空你喜欢的歌曲？</string>
+    <string name="clear_recent_songs">清空最近播放的歌曲？</string>
+
+    <string name="empty">空空如也</string>
+
+    <string name="menu_delete">删除</string>
+    <string name="menu_share">分享</string>
+    <string name="menu_play_next">下一首播放</string>
+    <string name="play">播放</string>
+
+    <string name="delete_song">你确定要删除这首歌曲吗？</string>
+    <string name="network_error">连接失败，请检查您的网络</string>
+    <string name="mobile_network_tip">你正在使用移动网络，确定要继续吗？</string>
+    <string name="mobile_network_enable_switch">允许使用移动网络播放</string>
+
+    <string name="report_bugs">提交bug</string>
+    <string name="give_star">来个star</string>
+
+</resources>
