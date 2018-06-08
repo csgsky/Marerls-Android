@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gy.allen.marerls.widget.TickToolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_common"
+    android:layout_width="match_parent"
+     android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/theme_color_primary"
+    android:elevation="@dimen/dp_3"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:titleTextColor="@android:color/white">
+
+
+</com.gy.allen.marerls.widget.TickToolbar>

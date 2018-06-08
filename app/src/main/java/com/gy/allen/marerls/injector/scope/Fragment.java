@@ -1,4 +1,4 @@
-package com.gy.allen.marerls.injector;
+package com.gy.allen.marerls.injector.scope;
 
 import java.lang.annotation.Retention;
 

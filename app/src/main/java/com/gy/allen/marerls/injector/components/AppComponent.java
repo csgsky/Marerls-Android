@@ -19,6 +19,7 @@ import io.reactivex.Scheduler;
 @Singleton
 @Component(modules = AppModule.class)
 public interface AppComponent {
+
     App app();
 
     Repository dataRepository();

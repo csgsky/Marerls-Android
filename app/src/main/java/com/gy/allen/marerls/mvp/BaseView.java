@@ -5,6 +5,5 @@ package com.gy.allen.marerls.mvp;
  */
 
 public interface BaseView {
-    void firstGetDate();
-    void loadMoreDateFail();
+
 }

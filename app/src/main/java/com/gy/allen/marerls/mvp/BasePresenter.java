@@ -5,5 +5,13 @@ package com.gy.allen.marerls.mvp;
  */
 
 public interface BasePresenter {
-    void unsubscribe();
+    void onStart();
+
+    void onStop();
+
+    void onPause();
+
+    void attachView(BaseView v);
+
+    void onCreate();
 }

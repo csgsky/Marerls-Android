@@ -2,8 +2,9 @@ package com.gy.allen.marerls.mvp.presenter;
 
 
 import com.gy.allen.domain.ThreatersUseCase;
+import com.gy.allen.marerls.mvp.BasePresenter;
+import com.gy.allen.marerls.mvp.BaseView;
 import com.gy.allen.marerls.mvp.view.ThreaterView;
-import com.gy.allen.marerls.mvp.view.View;
 import com.gy.allen.model.response.ThreatersResp;
 
 import javax.inject.Inject;
@@ -14,7 +15,7 @@ import io.reactivex.Observable;
  * Created by allen on 18/1/20.
  */
 
-public class Threaters implements Presenter {
+public class Threaters implements BasePresenter {
 
     private final ThreatersUseCase usecase;
     private ThreaterView view;
@@ -25,7 +26,7 @@ public class Threaters implements Presenter {
     }
 
     @Override
-    public void attachView(View v) {
+    public void attachView(BaseView v) {
         view = (ThreaterView) v;
     }
 
@@ -47,7 +48,6 @@ public class Threaters implements Presenter {
     public void onPause() {
 
     }
-
 
 
     @Override

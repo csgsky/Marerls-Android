@@ -1,4 +1,4 @@
-package com.gy.allen.marerls.injector;
+package com.gy.allen.marerls.injector.scope;
 
 import java.lang.annotation.Retention;
 
@@ -11,5 +11,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 
 @Scope @Retention(RUNTIME)
-public @interface Activity {
+public @interface PerActivity {
 }
