@@ -13,18 +13,18 @@ import com.gy.allen.marerls.R;
 import com.gy.allen.marerls.injector.components.ActivityComponent;
 import com.gy.allen.marerls.injector.components.DaggerActivityComponent;
 import com.gy.allen.marerls.injector.modules.ActivityModule;
-import com.gy.allen.marerls.mvp.BasePresenter;
-import com.gy.allen.marerls.mvp.BaseView;
 import com.gy.allen.marerls.util.ScreenUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import javax.inject.Inject;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by allen on 18/1/19.
  */
 
-public abstract class BaseA<T extends BasePresenter> extends RxAppCompatActivity implements BaseView {
+public abstract class BaseA<T extends IPresenter> extends RxAppCompatActivity implements IBaseView {
     @Inject
     protected T mPresenter;
     private Toolbar mToolbar;
@@ -32,6 +32,7 @@ public abstract class BaseA<T extends BasePresenter> extends RxAppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initInject();
         setViews();
         if (null != mPresenter) {
             mPresenter.attachView(this);
@@ -42,6 +43,7 @@ public abstract class BaseA<T extends BasePresenter> extends RxAppCompatActivity
     private void setViews() {
         setStatusBar();
         setContentView(getLayoutRes());
+        ButterKnife.bind(this);
         setToolbar();
         initViews();
     }
@@ -86,8 +88,8 @@ public abstract class BaseA<T extends BasePresenter> extends RxAppCompatActivity
     protected void setToolbar()  {
         mToolbar = findViewById(R.id.toolbar_common);
         if (null != mToolbar) {
-            mToolbar.getLayoutParams().height += ScreenUtils.Companion.getStausBarHeight(getApplicationContext());
-            mToolbar.setPadding(0, ScreenUtils.Companion.getStausBarHeight(getApplicationContext()), 0 , 0);
+            mToolbar.getLayoutParams().height += ScreenUtils.Companion.getStatusBarHeight(getApplicationContext());
+            mToolbar.setPadding(0, ScreenUtils.Companion.getStatusBarHeight(getApplicationContext()), 0 , 0);
             setSupportActionBar(mToolbar);
             if (getSupportActionBar() != null) {
                 getSupportActionBar().setDisplayShowTitleEnabled(false);

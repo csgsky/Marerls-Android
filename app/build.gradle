@@ -47,6 +47,8 @@ dependencies {
     compile "com.google.code.gson:gson:${libs.gson}"
     compile "com.github.bumptech.glide:glide:${libs.glide}"
     compile "com.tbruyelle.rxpermissions2:rxpermissions:${libs.rxpermissions}"
+    compile "com.jakewharton:butterknife:${libs.butterKnifeVersion}"
+    compile "com.jakewharton:butterknife-compiler:${libs.butterKnifeVersion}"
     apt "com.google.dagger:dagger-compiler:${libs.dagger}"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     testCompile "junit:junit:${libs.junit}"

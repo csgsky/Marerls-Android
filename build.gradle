@@ -55,6 +55,7 @@ ext {
             eventbus             : "3.1.1",
             rxpermissions        : "0.9.4@aar",
             skinChange           : "0.1.8@aar",
+            butterKnifeVersion   : "8.6.0",
             junit                : "4.12"
     ]
 }

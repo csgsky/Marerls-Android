@@ -27,7 +27,7 @@ class ScreenUtils {
             return outMetrics.heightPixels
         }
 
-        fun getStausBarHeight(context: Context): Int {
+        fun getStatusBarHeight(context: Context): Int {
             var statusHeight: Int = -1
             try {
                 val clazz = Class.forName("com.android.internal.R\$dimen")
