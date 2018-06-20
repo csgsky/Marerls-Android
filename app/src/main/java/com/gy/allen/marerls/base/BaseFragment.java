@@ -25,6 +25,7 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+
 public abstract class BaseFragment<T extends IPresenter> extends Fragment implements IBaseView {
 
     @Inject

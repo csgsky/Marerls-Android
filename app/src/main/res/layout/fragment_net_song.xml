@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <include
-        layout="@layout/layout_toolbar"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+   <com.gy.allen.marerls.widget.TickAppBarLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+       <android.support.design.widget.CollapsingToolbarLayout
+           android:id="@+id/ctl_title"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/dp_240"
+           app:scrimVisibleHeightTrigger="@dimen/dp_150"
+           app:collapsedTitleGravity="center_vertical"
+           app:collapsedTitleTextAppearance="@style/WhiteText"
+           app:expandedTitleGravity="left|center_vertical"
+           app:layout_scrollFlags="scroll|exitUntilCollapsed">
+           <ImageView
+               android:id="@+id/img_song"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:adjustViewBounds="true"
+               android:contentDescription="@string/app_name"
+               android:scaleType="fitXY"
+               android:src="@drawable/ic_default_horizontal"
+               android:transitionName="@string/img_transition"
+               app:layout_collapseMode="parallax"
+               app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed" />
+           <com.gy.allen.marerls.widget.TickToolbar
+               android:id="@+id/toolbar_common"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:layout_collapseMode="pin"
+               app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+               android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+               app:titleTextColor="@color/white" />
+           <android.support.design.widget.TabLayout
+               android:id="@+id/tab_net_music"
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/dp_45"
+               android:layout_gravity="bottom"
+               android:background="@color/colorTransparent"
+               android:elevation="@dimen/dp_1"
+               android:paddingBottom="@dimen/dp_1"
+               app:layout_collapseMode="pin"
+               app:layout_scrollFlags="scroll|enterAlways"
+               app:tabBackground="?selectableItemBackgroundBorderless"
+               app:tabGravity="center"
+               app:tabIndicatorColor="@color/white"
+               app:tabMode="scrollable"
+               app:tabSelectedTextColor="@color/white"
+               app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+               app:tabTextColor="@color/white_trans"/>
+       </android.support.design.widget.CollapsingToolbarLayout>
+   </com.gy.allen.marerls.widget.TickAppBarLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_net_song"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="网络歌曲"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    </android.support.v4.view.ViewPager>
+</android.support.design.widget.CoordinatorLayout>

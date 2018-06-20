@@ -2,6 +2,7 @@ package com.gy.allen.marerls.util
 
 import android.content.Context
 import android.util.DisplayMetrics
+import android.util.TypedValue
 import android.view.WindowManager
 import java.lang.Exception
 
@@ -27,6 +28,9 @@ class ScreenUtils {
             return outMetrics.heightPixels
         }
 
+        /**
+         * 获取状态栏高度
+         */
         fun getStatusBarHeight(context: Context): Int {
             var statusHeight: Int = -1
             try {
@@ -38,6 +42,16 @@ class ScreenUtils {
                 e.printStackTrace()
             }
             return statusHeight
+        }
+        /**
+         * 获取 ActionBar 高度
+         */
+        fun getActionBarHeight(context: Context): Int {
+            val tv = TypedValue()
+            if (context.theme.resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+                return TypedValue.complexToDimensionPixelSize(tv.data, context.resources.displayMetrics)
+            }
+            return 0
         }
 
 
