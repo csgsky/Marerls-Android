@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bumptech.glide.Glide;
 import com.gy.allen.marerls.R;
 import com.gy.allen.marerls.viewholder.HomeHolder;
 import com.gy.allen.model.response.ThreatersResp;
@@ -38,10 +37,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
         ThreatersResp.SubjectsBean item = subject.get(position);
         ThreatersResp.SubjectsBean.ImagesBean images = item.getImages();
         if (images.getMedium() != null && !TextUtils.isEmpty(images.getMedium())) {
-            Glide.with(mContext)
-                    .load(images.getMedium())
-                    .centerCrop()
-                    .into(holder.cover);
+//            Glide.with(mContext)
+//                    .load(images.getMedium())
+//                    .centerCrop()
+//                    .into(holder.cover);
         }
 
         String title = item.getTitle();

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 def cfg = rootProject.ext.configurations;
 def libs = rootProject.ext.libraries;
@@ -41,4 +42,7 @@ dependencies {
     compile "com.squareup.okhttp3:logging-interceptor:${libs.okhttp_intercepter}"
     compile "com.facebook.stetho:stetho:${libs.stetho}"
     compile "com.facebook.stetho:stetho-okhttp3:${libs.stetho_okhttp}"
+}
+repositories {
+    mavenCentral()
 }
