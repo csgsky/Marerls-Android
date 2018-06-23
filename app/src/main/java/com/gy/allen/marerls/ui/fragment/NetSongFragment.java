@@ -100,7 +100,7 @@ public class NetSongFragment extends BaseFragment<NetMusicCategoryPresenter> imp
         NetSongPagerAdapter netSongPagerAdapter = new NetSongPagerAdapter(getChildFragmentManager(), mCategoryData);
         mVpNetSong.setAdapter(netSongPagerAdapter);
         mTbNetMusic.setupWithViewPager(mVpNetSong);
-        mVpNetSong.setOffscreenPageLimit(mCategoryData.size());
+        mVpNetSong.setOffscreenPageLimit(3);
         mPresenter.setCategoryColor(categoryBeens.get(0).imgUrl);
         mCtlTitle.setTitle(categoryBeens.get(0).title);
         mTbNetMusic.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -129,7 +129,7 @@ public class NetSongFragment extends BaseFragment<NetMusicCategoryPresenter> imp
 
     @Override
     public void setCategoryColor(int color) {
-
+        mCtlTitle.setContentScrimColor(color);
     }
 
     class NetSongPagerAdapter extends FragmentPagerAdapter {

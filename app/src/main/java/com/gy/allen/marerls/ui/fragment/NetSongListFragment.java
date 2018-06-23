@@ -1,15 +1,16 @@
 package com.gy.allen.marerls.ui.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.gy.allen.marerls.R;
+import com.gy.allen.marerls.base.BaseFragment;
+import com.gy.allen.marerls.contract.NetMusicContract;
+import com.gy.allen.marerls.mvp.presenter.NetMusicPresenter;
+import com.gy.allen.model.NetSongBean;
 
-public class NetSongListFragment extends Fragment {
+import java.util.List;
+
+public class NetSongListFragment extends BaseFragment<NetMusicPresenter> implements NetMusicContract.View {
     private static final String TYPE = "type";
 
     public static NetSongListFragment newInstance(int type) {
@@ -19,10 +20,44 @@ public class NetSongListFragment extends Fragment {
         netSongListFragment.setArguments(bundle);
         return netSongListFragment;
     }
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.layout_net_music, container, false);
-        return rootView;
+    protected int getLayoutRes() {
+        return R.layout.layout_net_music;
+    }
+
+    @Override
+    public void loadCacheData(List<NetSongBean> songListBeen) {
+
+    }
+
+    @Override
+    public void loadSuccess(List<NetSongBean> songListBeen) {
+
+    }
+
+    @Override
+    public void setEmptyView() {
+
+    }
+
+    @Override
+    public void loadFail(Throwable throwable) {
+
+    }
+
+    @Override
+    public void loadMoreSuccess(List<NetSongBean> songListBeen) {
+
+    }
+
+    @Override
+    public void loadMoreEnd() {
+
+    }
+
+    @Override
+    public void loadMoreFail(Throwable throwable) {
+
     }
 }

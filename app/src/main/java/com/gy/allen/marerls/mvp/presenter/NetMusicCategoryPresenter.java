@@ -68,6 +68,7 @@ public class NetMusicCategoryPresenter extends BaseRxPresenter<NetMusicCategoryC
                             @Override
                             public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
                                 getView().setCategoryBitmap(resource);
+                                getView().setCategoryColor(getView().context().getResources().getColor(R.color.black));
                             }
                         })
         .build());
