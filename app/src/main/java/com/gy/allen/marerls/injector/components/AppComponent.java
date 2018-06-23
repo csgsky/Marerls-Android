@@ -2,7 +2,6 @@ package com.gy.allen.marerls.injector.components;
 
 import com.gy.allen.marerls.App;
 import com.gy.allen.marerls.injector.modules.AppModule;
-import com.gy.allen.model.repository.Repository;
 import com.gy.allen.model.rest.ApiSp;
 
 import javax.inject.Named;
@@ -21,8 +20,6 @@ import io.reactivex.Scheduler;
 public interface AppComponent {
 
     App app();
-
-    Repository dataRepository();
 
     ApiSp apiSp();
 

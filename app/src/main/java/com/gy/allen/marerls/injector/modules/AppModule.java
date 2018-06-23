@@ -1,9 +1,7 @@
 package com.gy.allen.marerls.injector.modules;
 
 import com.gy.allen.marerls.App;
-import com.gy.allen.model.repository.Repository;
 import com.gy.allen.model.rest.ApiSp;
-import com.gy.allen.model.rest.RestDataSource;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -49,9 +47,4 @@ public class AppModule {
         return AndroidSchedulers.mainThread();
     }
 
-    @Provides
-    @Singleton
-    Repository provideDataRepository(RestDataSource restDataSource) {
-        return restDataSource;
-    }
 }

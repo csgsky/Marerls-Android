@@ -17,14 +17,15 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import static com.gy.allen.model.net.NetConstants.TYPE_CLASSIC;
-import static com.gy.allen.model.net.NetConstants.TYPE_HOT;
-import static com.gy.allen.model.net.NetConstants.TYPE_LOVE;
-import static com.gy.allen.model.net.NetConstants.TYPE_MOVIE;
-import static com.gy.allen.model.net.NetConstants.TYPE_NETWORK;
-import static com.gy.allen.model.net.NetConstants.TYPE_NEW;
-import static com.gy.allen.model.net.NetConstants.TYPE_ROCK;
-import static com.gy.allen.model.net.NetConstants.TYPE_WESTITE;
+
+import static com.gy.allen.model.rest.constants.NetConstants.Value.TYPE_HOT;
+import static com.gy.allen.model.rest.constants.NetConstants.Value.TYPE_NEW;
+import static com.gy.allen.model.rest.constants.NetConstants.Value.TYPE_ROCK;
+import static com.gy.allen.model.rest.constants.NetConstants.Value.TYPE_WESTITE;
+import static com.gy.allen.model.rest.constants.NetConstants.Value.TYPE_CLASSIC;
+import static com.gy.allen.model.rest.constants.NetConstants.Value.TYPE_LOVE;
+import static com.gy.allen.model.rest.constants.NetConstants.Value.TYPE_MOVIE;
+import static com.gy.allen.model.rest.constants.NetConstants.Value.TYPE_NETWORK;
 
 public class NetMusicCategoryPresenter extends BaseRxPresenter<NetMusicCategoryContract.View> implements NetMusicCategoryContract.Presenter {
 
